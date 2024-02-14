@@ -1,16 +1,38 @@
+const axios = require("axios");
 const { Router } = require("express");
-const { Genre } = require("../db.js");
-
 const router = Router();
 
 //------- Pedir Generos a la BD --------
-router.get("/", async (req, res) => {
+// ------------------Get types------------------
+router.get("/list", async (req, res) => {
   try {
-    const instancias = await Genre.findAll();
-    // console.log(instancias);
-    res.status(200).json(instancias);
-  } catch (err) {
-    res.status(500).json(err);
+    let answer;
+    const data = await axios.get(`https://pokeapi.co/api/v2/type`);
+
+    const types = await data.data.results;
+    answer = {
+      name: types.map((t) => t.name),
+    };
+    res.status(200).json(answer);
+  } catch {
+    res.status(404).send(`No types`);
+  }
+});
+
+// ------------------Get pokemons by specific type------------------
+router.get("/:type", async (req, res) => {
+  const { type } = req.params;
+  try {
+    let answer;
+    const data = await axios.get(`https://pokeapi.co/api/v2/type/${type}`);
+
+    const types = await data.data.pokemon;
+    answer = {
+      name: types.map((p) => p.pokemon.name),
+    };
+    res.status(200).json(answer);
+  } catch {
+    res.status(404).send(`Not found ${type} pokemons `);
   }
 });
 
