@@ -23,12 +23,22 @@ router.get("/list", async (req, res) => {
 router.get("/:type", async (req, res) => {
   const { type } = req.params;
   try {
-    let answer;
+    const answer=[];
     const data = await axios.get(`https://pokeapi.co/api/v2/type/${type}`);
 
     const types = await data.data.pokemon;
-    answer = {
-      name: types.map((p) => p.pokemon.name),
+    names = types.map((p) => p.pokemon.name);
+     
+    for (const n of names) {
+      const data = await axios.get(`https://pokeapi.co/api/v2/pokemon/${n}`);
+      const apiGame = await data.data;
+  
+      let pokemon = {
+        id: apiGame.id,
+        name: apiGame.name,
+        imagen: apiGame.sprites.other.home.front_default,
+      };
+      answer.push(pokemon);
     };
     res.status(200).json(answer);
   } catch {

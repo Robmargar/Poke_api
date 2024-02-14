@@ -2,24 +2,30 @@ const axios = require("axios");
 const { Router } = require("express");
 const router = Router();
 
-
 // ------------------Get Initial List------------------
 router.get("/initial_list", async (req, res) => {
-  // se pide por  params
-  // const { offset} = req.params;
   try {
-    let answer;
+    const answer=[];
     let names;
     const data = await axios.get(
       `https://pokeapi.co/api/v2/pokemon?limit=5&offset=0`
     );
 
     const initial_list = await data.data.results;
-    names = {
-     name: initial_list.map((p) => p.name), 
+    names = initial_list.map((p) => p.name);
+    
+    for (const n of names) {
+      const data = await axios.get(`https://pokeapi.co/api/v2/pokemon/${n}`);
+      const apiGame = await data.data;
+  
+      let pokemon = {
+        id: apiGame.id,
+        name: apiGame.name,
+        imagen: apiGame.sprites.other.home.front_default,
+      };
+      answer.push(pokemon);
     };
-    console.log(initial_list);
-    res.status(200).json(names);
+    res.status(200).json(answer);
   } catch {
     res.status(404).send(`No pude obtener lista inicial`);
   }
