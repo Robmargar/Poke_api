@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      mono: ["Hey Comic"],
+      'mono': ['"Hey Comic"']
     },
   },
   plugins: [],

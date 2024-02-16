@@ -9,8 +9,8 @@ function App() {
   return (
     <>
       <Intro/>
-      <h1 class='font-mono text-9xl'> Poke-Api</h1>
       <Nav/>
+      <h1 class='font-mono text-9xl'> Poke-Api</h1>
       <Cards/>
       <Footer/>
     </>

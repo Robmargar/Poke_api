@@ -3,6 +3,6 @@ import { Card } from './Card'
 
 export const Cards = () => {
   return (
-    <div>Cards</div>
+    <Card/>
   )
 }
