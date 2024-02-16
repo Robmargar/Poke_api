@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Card= () => {
   return (
-    <article class="bg-yellow-500 rounded-2xl w-60 h-72 mx-2 my-4 p-2">
+    <article class="bg-yellow-500 rounded-2xl shadow-lg shadow-indigo-400/40 hover:shadow-blue-800/80 w-60 h-72 mx-2 my-4 p-2">
         <div class="flex flex-col-2 justify-evenly my-2">
           <h1 class='font-mono text-xl'> PIKACHU</h1>
           <h1 class='font-mono text-xl'> 25 </h1>
