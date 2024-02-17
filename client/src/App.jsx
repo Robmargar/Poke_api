@@ -7,11 +7,12 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <div class="mx-8">
       <Nav/>
+      <Intro/>
       <Cards/>
       <Footer/>
-    </>
+    </div>
   )
 }
 

@@ -8,7 +8,7 @@ router.get("/initial_list", async (req, res) => {
     const answer=[];
     let names;
     const data = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon?limit=5&offset=0`
+      `https://pokeapi.co/api/v2/pokemon?limit=15&offset=0`
     );
 
     const initial_list = await data.data.results;
