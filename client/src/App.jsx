@@ -7,7 +7,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div class="mx-8">
+    <div class="bg-red-600">
       <Nav/>
       <Intro/>
       <Cards/>
