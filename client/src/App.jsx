@@ -9,7 +9,7 @@ function App() {
   return (
     <div class="bg-red-600">
       <Nav/>
-      <Intro/>
+      <Intro autoSlide={true}/>
       <Cards/>
       <Footer/>
     </div>
