@@ -13,9 +13,10 @@ export const Nav = () => {
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
             </svg>
           </button>  
-          <div class="flex rounded-xl border-1  bg-red-100 hover:border-1 hover:border-blue-800">
-            <img class="mx-2 my-1 w-5" src="../../public/search.svg" alt="" />
-            <input class=" bg-red-100 rounded-xl " type="text" placeholder='Search pokemon' />
+          <div class="flex rounded-xl border-1 bg-red-100 focus:ring focus:border-blue-500">
+            <img class="mx-3 my-1 w-5" src="../../public/search.svg" alt="" />
+             <input class=" bg-red-100 rounded-xl outline-none" type="text" placeholder='Search pokemon'/>
+           
           </div>
         </ul>
       </nav>

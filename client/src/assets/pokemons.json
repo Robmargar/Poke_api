@@ -1,12 +1,12 @@
 [
     {
       "id": 1,
-      "name": "bulbasaur",
+      "name": "Bulbasaur",
       "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png"
     },
     {
       "id": 2,
-      "name": "ivysaur",
+      "name": "Ivysaur",
       "imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/2.png"
     },
     {
